@@ -1,0 +1,61 @@
+@startuml
+'José Igor de Farias Gomes
+'Hemilly Rayane de Sales Lucena
+class Usuario{
+	-login: String
+	-senha: String
+	-e-mail: String
+	-nome: String
+	-profissao: String
+	-amigos: Usuario[]
+	-adicionarAmigo()
+	-procurarAmigo()
+	-desfazerAmizade()
+
+}
+class Comentario{
+    -texto: String
+    -avaliação: int
+    -avaliarPoema()
+}
+
+class Sistema{
+    -listaUsuario: Usuario[]
+    -buscarUsuario()
+    -buscarTag()
+    -enviarMensagem()
+    -publicarPoema()
+}
+
+class Mensagem{
+    -mensagem: String
+    -usuario1: Usuario
+    -usuario2: Usuario
+
+}
+
+class Poema{
+    -titulo: String
+    -escopo: String
+    -listaTag: Tag[]
+    -mediaAvaliacao: double
+    -comentar()
+}
+
+class Tag{
+	-nome: String
+}
+
+class Historico{
+    -listaMensagem: Mensagem[]
+    -excluirMensagem()
+}
+
+Sistema -- Usuario
+Sistema -- Tag
+Mensagem --* Historico
+
+
+
+
+@enduml
