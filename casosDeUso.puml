@@ -1,0 +1,37 @@
+@startuml
+'Projeto Cordelo
+'José Igor de Farias Gomes
+'Hemilly Rayane de Sales Lucena
+left to right direction
+skinparam packageStyle rectangle
+
+:Usuario: as user
+
+rectangle "CORDELO"{
+(Realizar cadastro) as cad
+
+(Adicionar amigo) as add
+(Desfazer amizade) as del
+(Enviar mensagem direta) as DM
+
+(Pesquisar amigo) as pesq
+(Publicar poema) as pub
+(Alterar visibilidade) as priv
+(Pesquisar tag) as tagp
+(Adicionar tag) as addtag
+
+user -- cad
+add -- user
+del -- user
+DM -- user
+pesq -- user
+pub -- user
+pub <.. priv : <<extends>>
+
+pub <.. addtag : <<extends>>
+tagp -- user
+
+
+
+}
+@enduml
